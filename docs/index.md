@@ -1,8 +1,8 @@
 ## MIIDL
 
-MIIDL [ˈmaɪdəl] is the abbreviation of "Markers Identifier with Interpretabel Deep Learning". MIIDL is a biomarker screening tool based on interpretable deep learning and applied to datasets with a large number of features.
+MIIDL */ˈmaɪdəl/* is the abbreviation of "Markers Identifier with Interpretabel Deep Learning". MIIDL is a biomarker screening tool based on interpretable deep learning and applied to datasets with a large number of features.
 
-**Not available now**
+***Note: temporarily unavailable***
 
 ### Installation
 
@@ -12,10 +12,10 @@ pip install miidl
 
 ### Features
 
-+ feature1
-+ 2
-+ 3
-+ 4
++ One-stop profiling
++ Multiple strategies for biological data
++ Better performance than traditional machine learning
++ More robust than ordinary artificial neural networks
 
 ### Documentation
 
