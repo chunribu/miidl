@@ -1,2 +1,2 @@
 # [MIIDL](https://chunribu.github.io/miidl)
-A tool and package for Identification of biomarkers powered by an interpretable Convolutional Neural Network
+A tool and package for Identification of biomarkers powered by interpretable Convolutional Neural Networks
