@@ -19,7 +19,7 @@ pip install miidl
 
 ### Documentation
 
-Check out our [documentation]() or [contact support]() and we’ll help you sort it out.
+d_o_c_u_m_e_n_t_a_t_i_o_n
 
 ### Citation
 DOI:C_i_t_a_t_i_o_n
