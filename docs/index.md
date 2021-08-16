@@ -19,7 +19,7 @@ pip install miidl
 
 ### Documentation
 
-Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Check out our [documentation]() or [contact support]() and we’ll help you sort it out.
 
 ### Citation
 DOI:C_i_t_a_t_i_o_n
