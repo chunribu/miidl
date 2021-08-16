@@ -2,34 +2,24 @@
 
 MIIDL [ˈmaɪdəl] is the abbreviation of "Markers Identifier with Interpretabel Deep Learning". MIIDL is a biomarker screening tool based on interpretable deep learning and applied to datasets with a large number of features.
 
-### Markdown
+**Not available now**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Installation
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+pip install miidl
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Features
 
-### Jekyll Themes
++ feature1
++ 2
++ 3
++ 4
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/chunribu/miidl/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Documentation
 
-### Support or Contact
+Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Citation
+DOI:C_i_t_a_t_i_o_n
