@@ -45,7 +45,7 @@ In order to apply a 2d-CNN for modeling, data after pre-processing need to be re
 
 #### Modeling
 
-Typically, we build a 2d-CNN classifier to perform discrimination.
+Notably, we build a 2d-CNN classifier to perform discrimination. You can also write annother model manually in PyTorch.
 
 #### Interpretation
 
