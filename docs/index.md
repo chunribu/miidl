@@ -23,19 +23,19 @@ get started.
 
 ### Documentation
 
-#### Quality Control
+##### Quality Control
 
-#### Normalization
+##### Normalization
 
-#### Imputation
+##### Imputation
 
-#### Reshape
+##### Reshape
 
-#### Modeling
+##### Modeling
 
-#### Interpretation
+##### Interpretation
 
-#### Networking
+##### Networking
 
 ### Citation
 c_i_t_a_t_i_o_n
