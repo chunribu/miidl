@@ -33,8 +33,8 @@
                     <option>None</option>
                     <option >Missing Rate &lt; 0.90</option>
                     <option>Missing Rate &lt; 0.80</option>
-                    <option >Missing Rate &lt; 0.70</option>
-                    <option selected cmd="0.6">Missing Rate &lt; 0.60</option>
+                    <option selected>Missing Rate &lt; 0.70</option>
+                    <option cmd="0.6">Missing Rate &lt; 0.60</option>
                     <option>Missing Rate &lt; 0.50</option>
                     <option>Missing Rate &lt; 0.40</option>
                 </select>
@@ -43,7 +43,7 @@
                 <label for="norm">Normalization</label>
                 <select id="norm">
                     <option>None</option>
-                    <option>Log2(x+1) For All</option>
+                    <option selected>Log2(x+1) For All</option>
                     <option>Z-score For All</option>
                     <option>Median For All</option>
                     <option>Log2(x) For None-zeros</option>
@@ -77,7 +77,7 @@
                 <label for="reshape">Reshape</label>
                 <select id="reshape">
                     <option>None</option>
-                    <option>Auto Squared</option>
+                    <option selected>Auto Squared</option>
                     <option>Mannually Set</option>
                 </select>
             </div>
@@ -88,7 +88,7 @@
             <div class="pure-control-group">
                 <label for="model">Modeling</label>
                 <select id="model">
-                    <option>Default</option>
+                    <option selected>Default</option>
                     <option>Custom</option>
                     <option>None</option>
                 </select>
@@ -100,7 +100,7 @@
             <div class="pure-control-group">
                 <label for="intp">Interpretation</label>
                 <select id="intp">
-                    <option>Shapley</option>
+                    <option selected>Shapley</option>
                     <option>Captum 1</option>
                     <option>Captum 2</option>
                     <option>Captum 3</option>
@@ -112,7 +112,7 @@
                 <label for="net">Networking</label>
                 <select id="net">
                     <option>None</option>
-                    <option>Default(Top 20)</option>
+                    <option selected>Default(Top 20)</option>
                     <option>Custom</option>
                 </select>
             </div>

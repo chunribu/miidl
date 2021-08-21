@@ -24,7 +24,7 @@ pip install miidl
 
 MIIDL is designed to be a user friendly tool. Parameters are listed below, and you can use this graphic interface to generate a ready-to-run command if MIIDL is installed. (NOTE: Not yet fully functional)
 
-<iframe src="cmd_generater.html" width="100%" height="600" style="border:1px solid black;"></iframe>
+<iframe src="cmd_generater.html" width="100%" height="600"></iframe>
 
 ---
 ### Documentation
@@ -60,7 +60,7 @@ Finally, MIIDL builds a network with key genes to reveal potential regulatory re
 ---
 ### Citation
 
-doi:___
+doi: ___
 
 <script>
     document.head.innerHTML+='<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">'
