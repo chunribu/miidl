@@ -27,35 +27,35 @@ get started.
 ---
 ### Documentation
 
-##### Quality Control
+#### Quality Control
 
 This is the very first procedure to perform filtering according to the missing rate.
 
-##### Normalization
+#### Normalization
 
 MIIDL offers plenty of normalization methods to transform data and make samples more comparable. 
 
-##### Imputation
+#### Imputation
 
 By default, this step is unactivated, as MIIDL is designed to solve problems including sparseness. But imputation can be useful in some cases, there are various methods to choose if needed. 
 
-##### Reshape
+#### Reshape
 
 In order to apply a 2d-CNN for modeling, data after pre-processing need to be reshaped to a 2d-array which can be visualized like a photograph.
 
-##### Modeling
+#### Modeling
 
 Typically, we build a 2d-CNN classifier to perform discrimination.
 
-##### Interpretation
+#### Interpretation
 
 Shapley values have become one of the most popular feature attribution explanation methods for its sufficient theoretical support. Here, Shapley method is recommanded. Meanwhile, many other methods are also available.
 
-##### Networking
+#### Networking
 
 Finally, MIIDL builds a network with key genes to reveal potential regulatory relationships, providing reference for further analysis.
 
 ---
 ### Citation
 
-doi:____
+doi:___
