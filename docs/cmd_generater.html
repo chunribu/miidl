@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <style>
+        .unused {
+            display: none;
+        }
+        .rounded {
+            border-radius: 15%;
+            font-size: 70%;
+        }
+    </style>
+</head>
+<body>
+    <form class="pure-form pure-form-aligned">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="input">Input File</label>
+                <input id="input" value="pathToInputFile"/>
+            </div>
+            <div class="pure-control-group">
+                <label for="output">Output Path</label>
+                <input id="output" value="."/>
+            </div>
+            <div class="pure-control-group">
+                <label for="qc">Quality Control</label>
+                <select id="qc">
+                    <option>None</option>
+                    <option >Missing Rate &lt; 0.90</option>
+                    <option>Missing Rate &lt; 0.80</option>
+                    <option >Missing Rate &lt; 0.70</option>
+                    <option selected cmd="0.6">Missing Rate &lt; 0.60</option>
+                    <option>Missing Rate &lt; 0.50</option>
+                    <option>Missing Rate &lt; 0.40</option>
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="norm">Normalization</label>
+                <select id="norm">
+                    <option>None</option>
+                    <option>Log2(x+1) For All</option>
+                    <option>Z-score For All</option>
+                    <option>Median For All</option>
+                    <option>Log2(x) For None-zeros</option>
+                    <option>Z-score For None-zores</option>
+                    <option>Median For None-zeros</option>
+                </select>
+                <button class="pure-button rounded">➕</button>
+            </div>
+            <div class="pure-control-group unused">
+                <label for="norm2">Normalization2</label>
+                <select id="norm2">
+                    <option>None</option>
+                    <option>Log2(x+1) For All</option>
+                    <option>Z-score For All</option>
+                    <option>Median For All</option>
+                    <option>Log2(x) For None-zeros</option>
+                    <option>Z-score For None-zores</option>
+                    <option>Median For None-zeros</option>
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="imput">Imputation</label>
+                <select id="imput">
+                    <option>None</option>
+                    <option>K-Nearest Neighbor</option>
+                    <option>Minimal</option>
+                    <option>Mean</option>
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="reshape">Reshape</label>
+                <select id="reshape">
+                    <option>None</option>
+                    <option>Auto Squared</option>
+                    <option>Mannually Set</option>
+                </select>
+            </div>
+            <div class="pure-control-group unused">
+                <label for="set_width">Set Width</label>
+                <input id="set_width" />
+            </div>
+            <div class="pure-control-group">
+                <label for="model">Modeling</label>
+                <select id="model">
+                    <option>Default</option>
+                    <option>Custom</option>
+                    <option>None</option>
+                </select>
+            </div>
+            <div class="pure-control-group unused">
+                <label for="set_model">Set Model</label>
+                <input id="set_model" />
+            </div>
+            <div class="pure-control-group">
+                <label for="intp">Interpretation</label>
+                <select id="intp">
+                    <option>Shapley</option>
+                    <option>Captum 1</option>
+                    <option>Captum 2</option>
+                    <option>Captum 3</option>
+                    <option>Captum 4</option>
+                    <option>Captum 5</option>
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="net">Networking</label>
+                <select id="net">
+                    <option>None</option>
+                    <option>Default(Top 20)</option>
+                    <option>Custom</option>
+                </select>
+            </div>
+            <div class="pure-control-group unused">
+                <label for="set_top_n">Set Top N</label>
+                <input id="set_top_n" />
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -22,7 +22,9 @@ pip install miidl
 ---
 ### Get Started
 
-get started.
+MIIDL is designed to be a user friendly tool. Parameters are listed below, and you can use this graphic interface to generate a ready-to-run command if MIIDL is installed. (NOTE: not full functional yet)
+
+<iframe src="cmd_generater.html" style="border:1px solid black;"></iframe>
 
 ---
 ### Documentation
