@@ -61,7 +61,5 @@ Finally, MIIDL builds a network with key genes to reveal potential regulatory re
 doi:___
 
 <script>
-    window.onload = function(event){
-        document.head.innerHTML+='<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">'
-    })
+    document.head.innerHTML+='<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">'
 </script>
