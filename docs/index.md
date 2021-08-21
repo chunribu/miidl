@@ -4,12 +4,14 @@
 
 ***NOTE: not available yet***
 
+---
 ### Installation
 
 ```bash
 pip install miidl
 ```
 
+---
 ### Features
 
 + One-stop profiling
@@ -17,10 +19,12 @@ pip install miidl
 + Better performance than traditional machine learning
 + More robust than ordinary artificial neural networks
 
+---
 ### Get Started
 
 get started.
 
+---
 ### Documentation
 
 ##### Quality Control
@@ -37,5 +41,6 @@ get started.
 
 ##### Networking
 
+---
 ### Citation
 c_i_t_a_t_i_o_n
