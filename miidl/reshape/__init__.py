@@ -1,6 +1,7 @@
-from .methods import auto, custom
+from .methods import auto, custom, none
 
 call = {
     'auto': auto,
-    'custom': custom
+    'custom': custom,
+    'none': none
 }
