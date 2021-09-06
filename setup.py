@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 setup(
     name='miidl',
     version='0.0.1',
-    description='A biomarker screening tool based on interpretable deep learning',
+    description='A tool and Python package for identification of biomarkers powered by interpretable Convolutional Neural Networks',
     url='https://github.com/chunribu/miidl/',
     author='chunribu',
     author_email='chunribu@mail.sdu.edu.cn',
