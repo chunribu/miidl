@@ -1,1 +1,1 @@
-from .methods import coconet
+from .methods import buildnet

@@ -1,6 +1,6 @@
 import numpy as np
 
-def filter(df, obs=0.3):
+def qc(df, obs=0.3):
     '''Filt data by observed rate (obs_num / all_num)'''
     if obs=='none':
         obs=0

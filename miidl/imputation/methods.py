@@ -19,3 +19,6 @@ def mean(df):
     df = df.T
     means = df.mean().to_dict()
     return df.fillna(means).T
+
+def none(df):
+    return df

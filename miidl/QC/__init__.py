@@ -1,2 +1,2 @@
-from .qc import filter
+from .methods import qc
 
