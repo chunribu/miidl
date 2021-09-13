@@ -48,9 +48,6 @@ Notably, we build a 2d-CNN classifier to perform discrimination. You can also wr
 
 Shapley values have become one of the most popular feature attribution explanation methods for its sufficient theoretical support. Here, Shapley method is recommanded. Meanwhile, many other methods are also available.
 
-#### 7) Networking
-
-Finally, MIIDL builds a network with key genes to reveal potential regulatory relationships, providing reference for further analysis.
 
 <!-- ---
 ### Citation

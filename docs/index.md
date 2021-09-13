@@ -2,14 +2,16 @@
 
 **MIIDL** */ˈmaɪdəl/* is the abbreviation of "Markers Identification with Interpretable Deep Learning". MIIDL is a biomarker screening tool based on interpretable deep learning and applied to datasets with a large number of features.
 
-***NOTE: Not available yet***
 
 ---
 ### Installation
 
 ```bash
 pip install miidl
+# or
+conda install -c bioconda miidl
 ```
+**NOTE:** Not available yet
 
 ---
 ### Features
@@ -20,18 +22,18 @@ pip install miidl
 + More robust than ordinary artificial neural networks
 
 ---
-### Get Started
+### Command Generator
 
-MIIDL is designed to be a user friendly tool. Parameters are listed below, and you can use this graphic interface to generate a ready-to-run command if MIIDL is installed. (NOTE: Not yet fully functional)
+MIIDL is designed to be a user-friendly tool. Parameters are listed below, you can easily generate ready-to-run commands. (NOTE: Not yet fully functional)
 
-<iframe src="cmd_generater.html" width="100%" height="700" style="border: none"></iframe>
+<iframe src="cmd_generater.html" width="100%" height="500" style="border: none"></iframe>
 
 ---
 ### Workflow
 
 #### Quality Control
 
-This is the very first procedure to perform filtering according to the missing rate.
+This is the very first procedure to perform filtering according to the non-missing (observation) rate.
 
 #### Normalization
 
@@ -39,7 +41,7 @@ MIIDL offers plenty of normalization methods to transform data and make samples 
 
 #### Imputation
 
-By default, this step is unactivated, as MIIDL is designed to solve problems including sparseness. But imputation can be useful in some cases, there are various methods to choose if needed. 
+By default, this step is unactivated, as MIIDL is designed to solve problems including sparseness. But imputation can be useful in some cases. If needed, there are several methods to choose from. 
 
 #### Reshape
 
@@ -47,18 +49,12 @@ In order to apply a 2d-CNN for modeling, data after pre-processing need to be re
 
 #### Modeling
 
-Notably, we build a 2d-CNN classifier to perform discrimination. You can also write annother model manually in PyTorch.
+Notably, we build a 2d-CNN classifier to perform discrimination. 
 
 #### Interpretation
 
-Shapley values have become one of the most popular feature attribution explanation methods for its sufficient theoretical support. Here, Shapley method is recommanded. Meanwhile, many other methods are also available.
+Shapley values have become one of the most popular feature attribution explanation methods for its sufficient theoretical support. Here, Shapley method is recommanded. Many other methods are also available.
 
-#### Networking
-
-Finally, MIIDL builds a network with key genes to reveal potential regulatory relationships, providing reference for further analysis.
-
----
-### *Citation*
 
 
 <script>
