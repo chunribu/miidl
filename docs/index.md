@@ -26,7 +26,7 @@ conda install -c bioconda miidl
 
 MIIDL is designed to be a user-friendly tool. Parameters are listed below, you can easily generate ready-to-run commands. (NOTE: Not yet fully functional)
 
-<iframe src="cmd_generater.html" width="100%" height="500" style="border: none"></iframe>
+<iframe src="cmd_generater.html" width="100%" height="600" style="border: none"></iframe>
 
 ---
 ### Workflow
