@@ -1,1 +1,1 @@
-from .io import read, write
+from .methods import read, write
