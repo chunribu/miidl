@@ -25,7 +25,7 @@ conda install miidl -c bioconda
 
 #### 1) Quality Control
 
-This is the very first procedure to perform filtering according to the missing rate.
+This is the very first procedure to perform filtering according to the non-missing (observation) rate.
 
 #### 2) Normalization
 
@@ -33,7 +33,7 @@ MIIDL offers plenty of normalization methods to transform data and make samples 
 
 #### 3) Imputation
 
-By default, this step is unactivated, as MIIDL is designed to solve problems including sparseness. But imputation can be useful in some cases, there are various methods to choose if needed. 
+By default, this step is unactivated, as MIIDL is designed to solve problems including sparseness. But imputation can be useful in some cases. If needed, there are several methods to choose from. 
 
 #### 4) Reshape
 
