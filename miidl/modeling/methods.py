@@ -16,7 +16,7 @@ class myDataset(Dataset):
         return data, label
 
 class CNN(nn.Module):
-    def __init__(self):
+    def __init__(self, W, C):
         super(CNN,self).__init__()
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=16, kernel_size=2, stride=1, padding=1
@@ -32,8 +32,8 @@ class CNN(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2)      #维度变换(32,14,14) --> (32,7,7)
         )
-        self.fc1 = nn.Linear(32*7*7, 8*7*7)
-        self.fc2 = nn.Linear(8*7*7, 2)
+        self.fc1 = nn.Linear(32*W, 8*W)
+        self.fc2 = nn.Linear(8*W, C)
 
     def forward(self, x):
         out = self.conv1(x)                  #维度变换(Batch,1,28,28) --> (Batch,16,14,14)
@@ -43,8 +43,9 @@ class CNN(nn.Module):
         out = self.fc2(out)
         return out
 
-def default_model():
-    model = CNN()
+def default_model(width, C):
+    W = (width/4)**2
+    model = CNN(W, C)
     print(model)
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
@@ -84,10 +85,10 @@ def test(dataloader, model, loss_fn, device):
     correct /= size
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
 
-def default(X_train, y_train, X_test, y_test):
+def default(X_train, y_train, X_test, y_test, width, C):
     train_dataloader = DataLoader(myDataset(X_train, y_train), batch_size=8, shuffle=True)
     test_dataloader = DataLoader(myDataset(X_test, y_test), batch_size=8, shuffle=True)
-    model, loss_fn, optimizer, device = default_model()
+    model, loss_fn, optimizer, device = default_model(width, C)
     epochs = 5
     for t in range(epochs):
         print(f"Epoch {t+1}\n-------------------------------")
@@ -101,6 +102,6 @@ def default(X_train, y_train, X_test, y_test):
 #     model = None
 #     return model 
 
-def none(X_train=None, y_train=None, X_test=None, y_test=None):
+def none(X_train=None, y_train=None, X_test=None, y_test=None, width=None, C=None):
     print("Exit!")
     sys.exit(0)

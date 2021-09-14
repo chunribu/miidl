@@ -28,14 +28,6 @@ def integrate(df, patch_len):
         df['patch_'+str(i)] = 0
     return df
 
-def dataset_split(dataset, labels, train_proportion=0.7):
-    n_all = len(labels)
-    n_select = round(n_all * train_proportion)
-    idx_all = range(n_all)
-    idx_train = np.random.choice(n_all, size=n_select, replace=False)
-    idx_test = list(set(idx_all) - set(idx_train))
-    return dataset[idx_train], labels[idx_train], dataset[idx_test], labels[idx_test]
-
 
 def auto(df):
     n_feature = len(list(df))
@@ -48,16 +40,16 @@ def auto(df):
     ndarr = ndarr.reshape(n_sample, 1, width, width)
     return ndarr, features
 
-def custom(df, width):
-    n_feature = len(list(df))
-    n_sample = len(df.index)
-    width = edge(n_feature, width)
-    patch_len = width**2 - n_feature
-    df = integrate(df, patch_len)
-    features = list(df)
-    ndarr = df.to_numpy()
-    ndarr = ndarr.reshape(n_sample, 1, width, width)
-    return ndarr, features
+# def custom(df, width):
+#     n_feature = len(list(df))
+#     n_sample = len(df.index)
+#     width = edge(n_feature, width)
+#     patch_len = width**2 - n_feature
+#     df = integrate(df, patch_len)
+#     features = list(df)
+#     ndarr = df.to_numpy()
+#     ndarr = ndarr.reshape(n_sample, 1, width, width)
+#     return ndarr, features
 
 def none(df):
     ndarr = df.to_numpy()
