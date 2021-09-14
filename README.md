@@ -18,7 +18,7 @@ conda install miidl -c bioconda
 
 + One-stop profiling
 + Multiple strategies for biological data
-+ More Interpretable 
++ More interpretable, not a "black box"
 
 ---
 ### Workflow
