@@ -1,6 +1,6 @@
 # [MIIDL](https://chunribu.github.io/miidl)
 
-**MIIDL** */ˈmaɪdəl/* is the abbreviation of "Markers Identification with Interpretable Deep Learning". MIIDL is a biomarker screening tool based on interpretable deep learning and applied to datasets with a large number of features.
+**MIIDL** */ˈmaɪdəl/*, the abbreviation of "Markers Identification with Interpretable Deep Learning", is a biomarker screening tool based on interpretable deep learning.
 
 ---
 ### Installation
@@ -8,7 +8,7 @@
 ```bash
 pip install miidl
 # or
-conda install miidl
+conda install miidl -c bioconda
 ```
 
 ***NOTE: Not available yet***
@@ -18,8 +18,7 @@ conda install miidl
 
 + One-stop profiling
 + Multiple strategies for biological data
-+ Better performance than traditional machine learning
-+ More robust than ordinary artificial neural networks
++ More Interpretable 
 
 ---
 ### Workflow
@@ -38,15 +37,15 @@ By default, this step is unactivated, as MIIDL is designed to solve problems inc
 
 #### 4) Reshape
 
-In order to apply a 2d-CNN for modeling, data after pre-processing need to be reshaped to a 2d-array which can be visualized like a photograph.
+In order to apply a CNN model, pre-processed data needs to be zero-completed to a certain length.
 
 #### 5) Modeling
 
-Notably, we build a 2d-CNN classifier to perform discrimination. You can also write annother model manually in PyTorch.
+A 1d-CNN classifier is trained for discrimination. 
 
 #### 6) Interpretation
 
-Shapley values have become one of the most popular feature attribution explanation methods for its sufficient theoretical support. Here, Shapley method is recommanded. Meanwhile, many other methods are also available.
+[Captum](https://captum.ai/) is designed for model interpretability for PyTorch. This step relies heavily on captum.
 
 
 <!-- ---
