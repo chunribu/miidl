@@ -41,7 +41,7 @@ In order to apply a CNN model, pre-processed data needs to be zero-completed to 
 
 #### 5) Modeling
 
-A 1d-CNN classifier is trained for discrimination. 
+A CNN classifier is trained for discrimination. 
 
 #### 6) Interpretation
 
