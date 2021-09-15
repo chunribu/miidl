@@ -24,10 +24,11 @@ setup(
     classifiers=[
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS :: MacOS X',
+        'Operating System :: Microsoft :: Windows',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
     ],
-    keywords='biomarker deeplearning interpretable',
+    keywords='biomarker interpretable deeplearning',
     entry_points={
         'console_scripts': [
             # 'miidl = miidl:run_as_command',
