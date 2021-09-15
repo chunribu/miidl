@@ -47,6 +47,7 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 
 [Captum](https://captum.ai/) is designed for model interpretability for PyTorch. This step relies heavily on captum.
 
+---
 ### [Tutorials](../Tutorials.ipynb)
 
 Welcome! 👋 [This guide](../Tutorials.ipynb) will provide you with a specific example of how to use this tool properly.
