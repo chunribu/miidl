@@ -7,7 +7,8 @@ from .modeling import buildmodel as _buildmodel
 from .interpretation import explain as _explain
 import pandas as pd
 import numpy as np
-
+import torch
+from captum.attr import visualization as viz
 
 def _is_df(a):
     return True if type(a) is pd.DataFrame else False
@@ -18,7 +19,7 @@ def dataset_split(dataset, labels, train_proportion=0.7):
     idx_all = range(n_all)
     idx_train = np.random.choice(n_all, size=n_select, replace=False)
     idx_test = list(set(idx_all) - set(idx_train))
-    return dataset[idx_train], labels[idx_train], dataset[idx_test], labels[idx_test]
+    return dataset[idx_train], labels[idx_train], dataset[idx_test], labels[idx_test], idx_test
 
 class MData:
     def __init__(self):
@@ -32,9 +33,13 @@ class MData:
         self.test_X = None
         self.test_y = None
         self.model = None
-        self.attributions = []
+        self.attributions = None
         self.features = None
-        self.labels = {}
+        self.num2label = {}
+        self.label2num = {}
+        self.importances = None
+        self.full_y_sample_id = None
+        self.test_y_sample_id = None
 
     def __repr__(self) -> str:
         if _is_df(self.full_data):
@@ -51,18 +56,18 @@ class MData:
         if role=='all':
             self.full_data = _read(fname)
             self.full_y = self.full_data[group_col]
-            self.full_X = self.full_data.drop(columns=group_col).T
-            self.full_data = self.full_data.T
+            self.full_X = self.full_data.drop(columns=group_col)
+            self.full_data = self.full_data
         elif role=='train':
             self.train_data = _read(fname)
             self.train_y = self.train_data[group_col]
-            self.train_X = self.train_data.drop(columns=group_col).T
-            self.train_data = self.train_data.T
+            self.train_X = self.train_data.drop(columns=group_col)
+            self.train_data = self.train_data
         elif role=='test':
             self.test_data = _read(fname)
             self.test_y = self.test_data[group_col]
-            self.test_X = self.test_data.drop(columns=group_col).T
-            self.test_data = self.test_data.T
+            self.test_X = self.test_data.drop(columns=group_col)
+            self.test_data = self.test_data
         else:
             print(f"Illegal role: {role}!")
     
@@ -102,29 +107,41 @@ class MData:
         if _is_df(self.full_data):
             full_X, self.features = _reshape(self.full_X, method)
             uniq_label = list(set(self.full_y))
-            self.full_y = [uniq_label.index(i) for i in self.full_y]
+            self.full_y_sample_id = self.full_y.index
+            self.full_y = np.array([uniq_label.index(i) for i in self.full_y])
             for i, v in enumerate(uniq_label):
-                self.labels[i] = v
-            self.train_X, self.train_y, self.test_X, self.test_y = dataset_split(full_X, self.full_y, train_proportion)
+                self.num2label[i] = v
+                self.label2num[v] = i
+            self.train_X, self.train_y, self.test_X, self.test_y, test_sample_index = dataset_split(full_X, self.full_y, train_proportion)
+            self.test_y_sample_id = self.full_y_sample_id[test_sample_index]
         if _is_df(self.train_data):
             if _is_df(self.test_data):
                 self.train_X, self.features = _reshape(self.train_X, method)
                 self.test_X, self.features = _reshape(self.test_X, method)
+                self.test_y_sample_id = self.test_y.index
                 uniq_label = list(set(self.train_y))
-                self.train_y = [uniq_label.index(i) for i in self.train_y]
-                self.test_y = [uniq_label.index(i) for i in self.test_y]
+                self.train_y = np.array([uniq_label.index(i) for i in self.train_y])
+                self.test_y = np.array([uniq_label.index(i) for i in self.test_y])
                 for i, v in enumerate(uniq_label):
-                    self.labels[i] = v
+                    self.num2label[i] = v
+                    self.label2num[v] = i
     
-    def buildmodel(self, method='default'):
-        self.model = _buildmodel(self.train_X, self.train_y, self.test_X, self.test_y, method, self.train_X.shape[-1], len(set(self.labels)))
+    def buildmodel(self, method='default', epochs=5):
+        self.model = _buildmodel(self.train_X, self.train_y, self.test_X, self.test_y, method, self.train_X.shape[-1], len(self.num2label), epochs)
     
-    def explain(self, method='IntegratedGradients'):
+    def explain(self, target, method='IntegratedGradients'):
         if type(self.model) is not None:
-            for i in range(len(self.test_y)):
-                attr = _explain(self.model, self.test_X[i], method, target=len(set(self.labels)))
-                self.attributions.append(attr)    
+            self.attributions = _explain(self.model, self.test_X, method, target=self.label2num[target])
+        attr = self.attributions.numpy()
+        n_sample, n_width = attr.shape[0], attr.shape[-1]
+        attr = attr.reshape(n_sample, n_width**2)
+        imp = pd.DataFrame(data=attr, index=self.test_y_sample_id, columns=self.features)
+        self.importances = imp
+        cols = imp.apply(np.mean).abs().sort_values(ascending=False).head(20).index
+        imp[cols].apply(np.mean).plot.bar().get_figure().savefig('TOP20_KeyFeatures.png', dpi=300)
 
     def save(self):
-        pass
+        self.importances.to_csv('FeatureImportance.tsv', sep='\t')
+        attr_ig = np.transpose(self.attributions.squeeze().cpu().detach().numpy(), (1,2,0))
+        viz.visualize_image_attr(attr_ig, sign="all", cmap="viridis", show_colorbar=True, title="", alpha_overlay=1)[0].savefig('FeatureImportances.png', dpi=300)
     

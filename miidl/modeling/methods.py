@@ -3,11 +3,12 @@ import torch
 from torch import nn
 from torch.utils.data import Dataset, DataLoader
 
+global W, C
 
 class myDataset(Dataset):
     def __init__(self, dataset, labels):
-        self.dataset = dataset
-        self.labels = labels
+        self.dataset = torch.tensor(dataset).type(torch.float32)
+        self.labels = torch.tensor(labels)
     def __len__(self):
         return len(self.labels)
     def __getitem__(self, idx):
@@ -16,7 +17,7 @@ class myDataset(Dataset):
         return data, label
 
 class CNN(nn.Module):
-    def __init__(self, W, C):
+    def __init__(self):
         super(CNN,self).__init__()
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=16, kernel_size=2, stride=1, padding=1
@@ -32,8 +33,9 @@ class CNN(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2)      #维度变换(32,14,14) --> (32,7,7)
         )
-        self.fc1 = nn.Linear(32*W, 8*W)
-        self.fc2 = nn.Linear(8*W, C)
+        W, C = self.get_params()
+        self.fc1 = nn.Linear(int(32*W), int(8*W))
+        self.fc2 = nn.Linear(int(8*W), int(C))
 
     def forward(self, x):
         out = self.conv1(x)                  #维度变换(Batch,1,28,28) --> (Batch,16,14,14)
@@ -42,10 +44,15 @@ class CNN(nn.Module):
         out = self.fc1(out)
         out = self.fc2(out)
         return out
+    def get_params(self):
+        global W, C
+        return W, C
 
-def default_model(width, C):
+def default_model(width, c):
+    global W, C
     W = (width/4)**2
-    model = CNN(W, C)
+    C = c
+    model = CNN()
     print(model)
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
@@ -85,15 +92,14 @@ def test(dataloader, model, loss_fn, device):
     correct /= size
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
 
-def default(X_train, y_train, X_test, y_test, width, C):
+def default(X_train, y_train, X_test, y_test, width, C, epochs=5):
     train_dataloader = DataLoader(myDataset(X_train, y_train), batch_size=8, shuffle=True)
     test_dataloader = DataLoader(myDataset(X_test, y_test), batch_size=8, shuffle=True)
     model, loss_fn, optimizer, device = default_model(width, C)
-    epochs = 5
     for t in range(epochs):
         print(f"Epoch {t+1}\n-------------------------------")
         train(train_dataloader, model, loss_fn, optimizer, device)
-        test(test_dataloader, model, device)
+        test(test_dataloader, model, loss_fn, device)
     print("Done!")
     return model
 
@@ -102,6 +108,6 @@ def default(X_train, y_train, X_test, y_test, width, C):
 #     model = None
 #     return model 
 
-def none(X_train=None, y_train=None, X_test=None, y_test=None, width=None, C=None):
+def none(X_train=None, y_train=None, X_test=None, y_test=None, width=None, C=None, epochs=None):
     print("Exit!")
     sys.exit(0)

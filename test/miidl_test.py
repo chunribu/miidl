@@ -1,14 +1,12 @@
 from miidl import MData
 
-
 md = MData()
-md.read('FILE', role='all')
-md.qc()
-md.normalize()
-md.impute()
+md.read('CRC.txt')
+md.qc(obs=0.25)
+# In this case, normalization and imputation are not applied
+# md.normalize(method='none')
+# md.impute(method='none')
 md.reshape()
-md.buildmodel()
-md.explain()
-
-# Save data
-md.save()
+md.buildmodel(epochs=50)
+md.explain(target='CRC')
+md.save()# Save data

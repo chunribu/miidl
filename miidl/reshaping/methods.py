@@ -30,6 +30,7 @@ def integrate(df, patch_len):
 
 
 def auto(df):
+    df = df.fillna(0)
     n_feature = len(list(df))
     n_sample = len(df.index)
     width = edge(n_feature)

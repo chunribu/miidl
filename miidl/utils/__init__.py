@@ -1,1 +1,1 @@
-from .pipeline import run_as_command
+# from .pipeline import run_as_command

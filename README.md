@@ -1,17 +1,17 @@
 # [MIIDL](https://chunribu.github.io/miidl)
 
-**MIIDL** */ˈmaɪdəl/*, the abbreviation of "Markers Identification with Interpretable Deep Learning", is a biomarker screening tool based on interpretable deep learning.
+**MIIDL** */ˈmaɪdəl/*, the abbreviation of "Markers Identification with Interpretable Deep Learning", is a package for biomarker screening based on interpretable deep learning.
 
 ---
 ### Installation
 
 ```bash
 pip install miidl
-# or
+```
+or
+```bash
 conda install miidl -c bioconda
 ```
-
-***NOTE: Not available yet***
 
 ---
 ### Features
@@ -41,12 +41,15 @@ In order to apply a CNN model, pre-processed data needs to be zero-completed to 
 
 #### 5) Modeling
 
-A CNN classifier is trained for discrimination. 
+A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) is needed.
 
 #### 6) Interpretation
 
 [Captum](https://captum.ai/) is designed for model interpretability for PyTorch. This step relies heavily on captum.
 
+### [Tutorials](Tutorials.ipynb)
+
+Welcome! 👋 [This guide](Tutorials.ipynb) will provide you with a specific example of how to use this tool properly.
 
 <!-- ---
 ### Citation
