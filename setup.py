@@ -16,7 +16,10 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=[
-        # packages
+        "torch",
+        "torchvision",
+        "pandas",
+        "captum",
     ],
     classifiers=[
         'Operating System :: POSIX :: Linux',
