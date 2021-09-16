@@ -18,7 +18,7 @@ pip install miidl
 ```
 or
 ```bash
-conda install miidl -c bioconda
+conda install miidl captum -c pytorch -c conda-forge -c bioconda
 ```
 
 ---
