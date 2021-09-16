@@ -8,7 +8,15 @@ from .interpretation import explain as _explain
 import pandas as pd
 import numpy as np
 import torch
-from captum.attr import visualization as viz
+
+
+try:
+    from captum.attr import visualization as viz
+except:
+    import sys
+    print("The module 'captum' is not found, please install first.")
+    print("\tconda install captum -c pytorch")
+    sys.exit(0)
 
 def _is_df(a):
     return True if type(a) is pd.DataFrame else False

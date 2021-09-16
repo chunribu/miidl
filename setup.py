@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name='miidl',
-    version='0.0.1',
+    version='0.0.2',
     description='Python package for identification of biomarkers powered by interpretable Convolutional Neural Networks',
     url='https://github.com/chunribu/miidl/',
     author='chunribu',

@@ -1,5 +1,7 @@
 # [MIIDL](https://chunribu.github.io/miidl)
 
+[![PyPI version](https://badge.fury.io/py/miidl.svg)](https://badge.fury.io/py/miidl) [![Anaconda-Server Badge](https://anaconda.org/bioconda/miidl/badges/version.svg)](https://anaconda.org/bioconda/miidl) [![Anaconda-Server Badge](https://anaconda.org/bioconda/miidl/badges/platforms.svg)](https://anaconda.org/bioconda/miidl) [![Anaconda-Server Badge](https://anaconda.org/bioconda/miidl/badges/license.svg)](https://anaconda.org/bioconda/miidl)
+
 **MIIDL** `/ˈmaɪdəl/` is a Python package for biomarker identification based on interpretable deep learning.
 
 ---
