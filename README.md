@@ -25,19 +25,19 @@ conda install miidl -c bioconda
 
 #### 1) Quality Control
 
-This is the very first procedure to perform filtering according to the non-missing (observation) rate.
+The very first procedure is filtering features according to a threshold of observation (non-missing) rate (0.3 by default).
 
 #### 2) Normalization
 
-MIIDL offers plenty of normalization methods to transform data and make samples more comparable. 
+`miidl` offers plenty of normalization methods to transform data and make samples more comparable. 
 
 #### 3) Imputation
 
-By default, this step is unactivated, as MIIDL is designed to solve problems including sparseness. But imputation can be useful in some cases. If needed, there are several methods to choose from. 
+By default, this step is unactivated, as `miidl` is designed to solve problems including sparseness. But imputation can be useful in some cases. Commonly used methods are available if needed. 
 
 #### 4) Reshape
 
-In order to apply a CNN model, pre-processed data needs to be zero-completed to a certain length.
+The pre-processed data also need to be zero-completed to a certain length, so that a CNN model can be applied.
 
 #### 5) Modeling
 
@@ -45,12 +45,12 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 
 #### 6) Interpretation
 
-[Captum](https://captum.ai/) is designed for model interpretability for PyTorch. This step relies heavily on captum.
+[Captum](https://captum.ai/) is dedicated to model interpretability for PyTorch. This step relies heavily on captum.
 
 ---
 ### [Getting Started](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb)
 
-Welcome! 👋 [This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example that using miidl to detect microbial biomarkers for the diagnosis of colorectal cancer. After that, you will konw how to use this tool properly.
+Welcome! 👋 [This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example that using `miidl` to detect microbial biomarkers for the diagnosis of colorectal cancer. After that, you will konw how to use this tool properly.
 
 ---
 <!-- ---
