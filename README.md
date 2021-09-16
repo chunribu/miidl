@@ -1,6 +1,6 @@
 # [MIIDL](https://chunribu.github.io/miidl)
 
-**MIIDL** */ˈmaɪdəl/*, the abbreviation of "Markers Identification with Interpretable Deep Learning", is a package for biomarker screening based on interpretable deep learning.
+**MIIDL** `/ˈmaɪdəl/` is a Python package for biomarker identification based on interpretable deep learning.
 
 ---
 ### Installation
@@ -48,9 +48,9 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 [Captum](https://captum.ai/) is designed for model interpretability for PyTorch. This step relies heavily on captum.
 
 ---
-### [Tutorials](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb)
+### [Getting Started](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb)
 
-Welcome! 👋 [This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example of how to use this tool properly.
+Welcome! 👋 [This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example that using miidl to detect microbial biomarkers for the diagnosis of colorectal cancer. After that, you will konw how to use this tool properly.
 
 ---
 <!-- ---
