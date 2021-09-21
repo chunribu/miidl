@@ -146,10 +146,10 @@ class MData:
         imp = pd.DataFrame(data=attr, index=self.test_y_sample_id, columns=self.features)
         self.importances = imp
         cols = imp.apply(np.mean).abs().sort_values(ascending=False).head(20).index
-        imp[cols].apply(np.mean).plot.bar().get_figure().savefig('TOP20_KeyFeatures.png', dpi=300)
+        imp[cols].apply(np.mean).plot.bar().get_figure().savefig('TOP20_KeyFeatures.pdf', dpi=300)
 
     def save(self):
         self.importances.to_csv('FeatureImportance.tsv', sep='\t')
         attr_ig = np.transpose(self.attributions.squeeze().cpu().detach().numpy(), (1,2,0))
-        viz.visualize_image_attr(attr_ig, sign="all", cmap="viridis", show_colorbar=True, title="", alpha_overlay=1)[0].savefig('FeatureImportances.png', dpi=300)
+        viz.visualize_image_attr(attr_ig, sign="all", cmap="viridis", show_colorbar=True, title="", alpha_overlay=1)[0].savefig('FeatureImportances.pdf', dpi=300)
     
