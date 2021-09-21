@@ -56,6 +56,14 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 [Captum](https://captum.ai/) is dedicated to model interpretability for PyTorch. This step relies heavily on captum.
 
 ---
+### Contact
+
+If you have further thoughts or queries, please feel free to email at chunribu@mail.sdu.edu.cn or open an issue!
+
+---
+### Licence
+
+MIIDL is released under the [MIT licence](https://github.com/chunribu/miidl/blob/main/LICENSE).
 
 <!-- ---
 ### Citation
