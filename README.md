@@ -4,6 +4,8 @@
 
 **MIIDL** `/ˈmaɪdəl/` is a Python package for biomarker identification based on interpretable deep learning.
 
+![model.png](https://github.com/chunribu/miidl/raw/main/docs/model.png)
+
 ---
 ### [Getting Started](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb)
 
