@@ -6,8 +6,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name='miidl',
-    version='0.0.4',
-    description='Python package for identification of biomarkers powered by interpretable Convolutional Neural Networks',
+    version='0.0.5',
+    description='A Python package for microbial biomarkers identification powered by interpretable deep learning',
     url='https://github.com/chunribu/miidl/',
     author='chunribu',
     author_email='chunribu@mail.sdu.edu.cn',
@@ -20,6 +20,7 @@ setup(
         "torchvision",
         "pandas",
         "captum",
+        "scikit-learn",
     ],
     classifiers=[
         'Operating System :: POSIX :: Linux',

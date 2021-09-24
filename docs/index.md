@@ -1,5 +1,5 @@
 
-**MIIDL** `/ˈmaɪdəl/` is a Python package for biomarker identification based on interpretable deep learning.
+**MIIDL** `/ˈmaɪdəl/` is a Python package for microbial biomarkers identification powered by interpretable deep learning.
 
 ![model.png](model.png)
 
@@ -8,7 +8,7 @@
 
 👋Welcome! 
 
-[🔗This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example that using `miidl` to detect microbial biomarkers for the diagnosis of colorectal cancer. 
+[🔗This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example that using `miidl` to detect microbial biomarkers of colorectal cancer and predict clinical outcomes. 
 
 After that, you will learn how to use this tool properly.
 
@@ -60,17 +60,17 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 ---
 ### Contact
 
-If you have further thoughts or queries, please feel free to email at chunribu@mail.sdu.edu.cn or open an issue!
+If you have further thoughts or queries, please feel free to email at [chunribu@mail.sdu.edu.cn](mailto:chunribu@mail.sdu.edu.cn) or open an issue!
 
 ---
 ### Licence
 
 MIIDL is released under the [MIT licence](https://github.com/chunribu/miidl/blob/main/LICENSE).
 
-<!-- ---
+---
 ### Citation
 
-doi: -->
+The manuscript is in preparation.
 
 
 <script>

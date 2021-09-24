@@ -2,7 +2,7 @@
 
 [![chunribu logo](https://img.shields.io/badge/chunribu-🚀-black?logo=github)](https://github.com/chunribu/) [![Anaconda-Server Badge](https://anaconda.org/bioconda/miidl/badges/version.svg)](https://anaconda.org/bioconda/miidl) [![Anaconda-Server Badge](https://anaconda.org/bioconda/miidl/badges/downloads.svg)](https://anaconda.org/bioconda/miidl) [![Anaconda-Server Badge](https://anaconda.org/bioconda/miidl/badges/platforms.svg)](https://anaconda.org/bioconda/miidl) [![Anaconda-Server Badge](https://anaconda.org/bioconda/miidl/badges/license.svg)](https://anaconda.org/bioconda/miidl) 
 
-**MIIDL** `/ˈmaɪdəl/` is a Python package for biomarker identification based on interpretable deep learning.
+**MIIDL** `/ˈmaɪdəl/` is a Python package for microbial biomarkers identification powered by interpretable deep learning.
 
 ![model.png](https://github.com/chunribu/miidl/raw/main/docs/model.png)
 
@@ -11,7 +11,7 @@
 
 👋Welcome! 
 
-[🔗This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example that using `miidl` to detect microbial biomarkers for the diagnosis of colorectal cancer. 
+[🔗This guide](https://github.com/chunribu/miidl/blob/main/Tutorials.ipynb) will provide you with a specific example that using `miidl` to detect microbial biomarkers of colorectal cancer and predict clinical outcomes. 
 
 After that, you will learn how to use this tool properly.
 
@@ -46,7 +46,7 @@ The very first procedure is filtering features according to a threshold of obser
 
 #### 3) Imputation
 
-By default, this step is unactivated, as `miidl` is designed to solve problems including sparseness. But imputation can be useful in some cases. Commonly used methods are available if needed. 
+By default, this step is inactivated, as `miidl` is designed to solve problems including sparseness. But imputation can be useful in some cases. Commonly used methods are available if needed. 
 
 #### 4) Reshape
 
@@ -58,7 +58,7 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 
 #### 6) Interpretation
 
-[Captum](https://captum.ai/) is dedicated to model interpretability for PyTorch. This step relies heavily on captum.
+[Captum](https://captum.ai/) is dedicated to model interpretability for PyTorch. This step depends heavily on captum.
 
 ---
 ### Contact
@@ -69,7 +69,8 @@ If you have further thoughts or queries, please feel free to email at chunribu@m
 ### Licence
 
 MIIDL is released under the [MIT licence](https://github.com/chunribu/miidl/blob/main/LICENSE).
-<!-- ---
+
+---
 ### Citation
 
-doi: -->
+The manuscript is in preparation.
