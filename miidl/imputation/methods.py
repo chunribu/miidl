@@ -1,8 +1,14 @@
 def knn(df):
     import pandas as pd
-    from sklearn.impute import KNNImputer
+    try:
+        from sklearn.impute import KNNImputer
+    except:
+        import sys
+        print("The module 'scikit-learn' is not found, please install first.")
+        print("\tconda install -c conda-forge scikit-learn")
+        sys.exit(0)
     imputer = KNNImputer()
-    data = imputer.fit_transform(X)
+    data = imputer.fit_transform(df.to_numpy())
     return pd.DataFrame(data, index=df.index, columns=df.columns)
 
 def minimum(df):
