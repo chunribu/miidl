@@ -68,6 +68,7 @@ If you have further thoughts or queries, please feel free to email at chunribu@m
 ---
 ### Citation
 
+```
 @misc{jiang2021miidl,
       title={MIIDL: a Python package for microbial biomarkers identification powered by interpretable deep learning}, 
       author={Jian Jiang},
@@ -76,6 +77,7 @@ If you have further thoughts or queries, please feel free to email at chunribu@m
       archivePrefix={arXiv},
       primaryClass={q-bio.QM}
 }
+```
 
 ---
 ### License
