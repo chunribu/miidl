@@ -63,14 +63,23 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 If you have further thoughts or queries, please feel free to email at [chunribu@mail.sdu.edu.cn](mailto:chunribu@mail.sdu.edu.cn) or open an issue!
 
 ---
-### Licence
-
-MIIDL is released under the [MIT licence](https://github.com/chunribu/miidl/blob/main/LICENSE).
-
----
 ### Citation
 
-The manuscript is in preparation.
+```
+@misc{jiang2021miidl,
+      title={MIIDL: a Python package for microbial biomarkers identification powered by interpretable deep learning}, 
+      author={Jian Jiang},
+      year={2021},
+      eprint={2109.12204},
+      archivePrefix={arXiv},
+      primaryClass={q-bio.QM}
+}
+```
+
+---
+### License
+
+MIIDL is released under the [MIT license](https://github.com/chunribu/miidl/blob/main/LICENSE).
 
 
 <script>
