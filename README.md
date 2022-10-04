@@ -63,7 +63,7 @@ A CNN classifier is trained for discrimination. [PyTorch](https://pytorch.org) i
 ---
 ### Contact
 
-If you have further thoughts or queries, please feel free to email at chunribu@mail.sdu.edu.cn or open an issue!
+If you have further thoughts or queries, please feel free to email at jianjiang.bio@gmail.com or open an issue!
 
 ---
 ### Citation
